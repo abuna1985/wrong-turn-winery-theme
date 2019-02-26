@@ -79,3 +79,6 @@ app/wp-content/themes/twenty*/
 
 # ignore node/grunt dependency directories
 node_modules/
+
+# ignore pack-lock.json
+package-lock.json
