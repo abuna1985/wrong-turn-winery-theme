@@ -748,7 +748,7 @@
     margin-bottom: 0;
   }
   
-  .school-logo-text {
+  .winery-logo-text {
     position: relative;
     z-index: 20;
     margin: 0;
@@ -756,20 +756,20 @@
     font-weight: 100;
   }
   
-  .school-logo-text strong {
+  .winery-logo-text strong {
     font-weight: 400;
   }
   
-  .school-logo-text a {
+  .winery-logo-text a {
     color: #FFF;
     text-decoration: none;
   }
   
-  .school-logo-text--alt-color a {
+  .winery-logo-text--alt-color a {
     color: #666;
   }
   
-  .school-logo-text--alt-color a:hover {
+  .winery-logo-text--alt-color a:hover {
     color: #0D3B66;
     text-decoration: underline;
   }
