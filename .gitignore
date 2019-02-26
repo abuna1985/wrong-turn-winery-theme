@@ -1,0 +1,81 @@
+# ignore everything in the root except the "wp-content" directory.
+app/*
+!app/wp-content/
+
+
+# Here is an example of how you could ignore the plugins folder
+# and then use the exclamation point to un-ignore only certain plugins
+# that do not auto-update and that you DO want to keep in Git.
+# app/wp-content/plugins/
+# !app/wp-content/plugins/advanced-custom-fields-pro/
+
+
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
+
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
+
+# ignore all files that start with ~
+~*
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.vscode
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore Google Map API integration
+app/wp-content/themes/wrong-turn-winery-theme/includes/google-map-api.php
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins" directory
+# "plugins" directory
+# "themes" directory
+app/wp-content/*
+!app/wp-content/mu-plugins/
+!app/wp-content/plugins/
+!app/wp-content/themes/
+
+# ignore these plugins
+app/wp-content/plugins/hello.php
+app/wp-content/plugins/akismet/*
+
+# ignore specific themes
+app/wp-content/themes/twenty*/
+
+# ignore node/grunt dependency directories
+node_modules/
