@@ -14,29 +14,32 @@
     <div class="full-width-split__one">
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+
+        <?php 
+          $today = date('Ymd');
+          $homepageEvents = new WP_Query(array(
+            'posts_per_page'  => 2,
+            'post_type'       => 'event',
+            'meta_key'        => 'event_date',
+            'orderby'        => 'meta_value_num',
+            'order'           => 'ASC',
+            'meta_query'      => array(
+              array(
+                'key'     => 'event_date',
+                'compare' => '>=',
+                'value'   => $today,
+                'type'    => 'DATE'
+              )
+            )
+          ));
+
+          while($homepageEvents->have_posts()) {
+            $homepageEvents->the_post();
+            get_template_part('template-parts/content', 'event'); 
+          }
+        ?>
         
-        <div class="event-summary">
-          <a class="event-summary__date t-center" href="#">
-            <span class="event-summary__month">Mar</span>
-            <span class="event-summary__day">25</span>  
-          </a>
-          <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="#">White Wine Festival</a></h5>
-            <p>Bring you&rsquo;re glasses to enjoy over 40 wines this Saturday for a tasting and snacks. <a href="#" class="nu gray">Learn more</a></p>
-          </div>
-        </div>
-        <div class="event-summary">
-          <a class="event-summary__date t-center" href="#">
-            <span class="event-summary__month">Apr</span>
-            <span class="event-summary__day">02</span>  
-          </a>
-          <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="#">Red Wine Festival</a></h5>
-            <p>Live music, over 30 red wines, and more can found in our third red wine festival. <a href="#" class="nu gray">Learn more</a></p>
-          </div>
-        </div>
-        
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
+        <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn--blue">View All Events</a></p>
 
       </div>
     </div>
@@ -57,7 +60,11 @@
                 </a>
                 <div class="event-summary__content">
                   <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                  <p><?php echo wp_trim_words(get_the_content(), 18); ?><a href="<?php the_permalink(); ?>" class="nu gray">Read more</a></p>
+                  <p><?php if(has_excerpt()) {
+                    echo get_the_excerpt();
+                  } else {
+                    echo wp_trim_words(get_the_content(), 18);
+                  } ?> <a href="<?php the_permalink(); ?>" class="nu gray">Read more</a></p>
                 </div>
               </div>
           <?php }
