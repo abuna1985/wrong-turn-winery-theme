@@ -21,7 +21,7 @@ function winery_post_types() {
 
   // Wine Post Type
   register_post_type('wine', array(
-    'supports'      =>  array('title', 'editor'),
+    'supports'      =>  array('title', 'editor', 'thumbnail'),
     'taxonomies'    => array('post_tag'),
     'rewrite'       =>  array('slug' => 'wines'),
     'has_archive'   =>  true,
@@ -36,6 +36,22 @@ function winery_post_types() {
       'singular_name'   =>  'Wine'
     ),
     'menu_icon' => 'dashicons-products'
+  ));
+
+  // Staff Post Type
+  register_post_type('staff', array(
+    'supports'      =>  array('title', 'editor', 'thumbnail'),
+    'public'        =>  true,
+    'show_in_rest'  =>  true,
+    'labels'        =>  array(
+      'name'            =>  'Staff',
+      'add_new_item'    =>  'Add New Staff',
+      'edit_item'       =>  'Edit Staff',
+      'all_items'       =>  'All Staff',
+      'view_item'       =>  'View Staff',
+      'singular_name'   =>  'Staff'
+    ),
+    'menu_icon' => 'dashicons-businessman'
   ));
 }
 
