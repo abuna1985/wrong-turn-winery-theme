@@ -37,6 +37,22 @@ function winery_post_types() {
     ),
     'menu_icon' => 'dashicons-products'
   ));
+
+  // Staff Post Type
+  register_post_type('staff', array(
+    'supports'      =>  array('title', 'editor'),
+    'public'        =>  true,
+    'show_in_rest'  =>  true,
+    'labels'        =>  array(
+      'name'            =>  'Staff',
+      'add_new_item'    =>  'Add New Staff',
+      'edit_item'       =>  'Edit Staff',
+      'all_items'       =>  'All Staff',
+      'view_item'       =>  'View Staff',
+      'singular_name'   =>  'Staff'
+    ),
+    'menu_icon' => 'dashicons-businessman'
+  ));
 }
 
 add_action('init', 'winery_post_types');
