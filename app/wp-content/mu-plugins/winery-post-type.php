@@ -21,7 +21,7 @@ function winery_post_types() {
 
   // Wine Post Type
   register_post_type('wine', array(
-    'supports'      =>  array('title', 'editor'),
+    'supports'      =>  array('title', 'editor', 'thumbnail'),
     'taxonomies'    => array('post_tag'),
     'rewrite'       =>  array('slug' => 'wines'),
     'has_archive'   =>  true,
@@ -40,7 +40,7 @@ function winery_post_types() {
 
   // Staff Post Type
   register_post_type('staff', array(
-    'supports'      =>  array('title', 'editor'),
+    'supports'      =>  array('title', 'editor', 'thumbnail'),
     'public'        =>  true,
     'show_in_rest'  =>  true,
     'labels'        =>  array(
