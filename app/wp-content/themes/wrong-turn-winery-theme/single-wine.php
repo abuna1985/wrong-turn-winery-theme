@@ -90,6 +90,18 @@
         }
 
         wp_reset_postdata();
+        $relatedLocations = get_field('related_locations');
+
+        if ($relatedLocations) {
+          echo '<hr class="section-break">';
+          echo '<h2 class="headline headline--medium">' . get_the_title() . ' is Available At These Locations</h2>';
+          echo '<ul class="min-list link-list">';
+            foreach ($relatedLocations as $location) {
+              ?> <li><a href="<?php echo get_the_permalink($location); ?>"><?php echo get_the_title($location); ?></a></li> <?php
+
+            }
+          echo '</ul>';
+        }
 
       ?>
 
