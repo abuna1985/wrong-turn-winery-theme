@@ -23,15 +23,15 @@
       
       <?php 
 
-        $relatedPrograms = get_field('related_wines');
+        $relatedWines = get_field('related_wines');
         
         // If there are 'related_wines' selected in the custom field of the event post, show them
-        if($relatedPrograms){
+        if($relatedWines){
           echo '<hr class="section-break">';
           echo '<h2 class="headline headline--medium">Knowledge of Wine(s)</h2>';
           echo '<ul class="link-list min-list">';
-          foreach($relatedPrograms as $program) { ?>
-            <li><a href="<?php echo get_the_permalink($program) ?>"><?php echo get_the_title($program); ?></a></li>
+          foreach($relatedWines as $wine) { ?>
+            <li><a href="<?php echo get_the_permalink($wine) ?>"><?php echo get_the_title($wine); ?></a></li>
           <?php }
           echo '</ul>';
         }
