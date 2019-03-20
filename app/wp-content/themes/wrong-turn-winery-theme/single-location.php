@@ -27,7 +27,7 @@
 
       <?php 
 
-        $relatedWine = new WP_Query(array(
+        $relatedWines = new WP_Query(array(
           'posts_per_page' => -1,
           'post_type' => 'wine',
           'orderby' => 'title',
@@ -41,12 +41,12 @@
           )
         ));
 
-        if ($relatedWine->have_posts()) {
+        if ($relatedWines->have_posts()) {
           echo '<hr class="section-break">';
           echo '<h2 class="headline headline--medium">Wines Available at this Location</h2>';
           echo '<ul class="min-list link-list">';
-          while($relatedWine->have_posts()) {
-            $relatedWine->the_post(); ?>
+          while($relatedWines->have_posts()) {
+            $relatedWines->the_post(); ?>
             <li>
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
