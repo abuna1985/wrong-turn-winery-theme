@@ -1,6 +1,7 @@
 <?php
 
 function winery_files() {
+  wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=AIzaSyC4UvhBtsRx6svEyQLiIMCKbXLqp5ZcD5U', NULL, '1.0', true);
   // TODO: revert microtime() back to version '1.0' before this goes live
   wp_enqueue_script('main-winery-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, microtime(), true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
