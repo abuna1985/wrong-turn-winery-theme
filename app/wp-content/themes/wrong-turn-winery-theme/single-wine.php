@@ -18,7 +18,7 @@
             <?php the_post_thumbnail('staffPortrait'); ?>
           </div>
           <div class="two-thirds">
-            <?php the_content(); ?>
+            <?php the_field('main_body_content'); ?>
           </div>
         </div>
       </div>
