@@ -3,12 +3,14 @@
 function winery_post_types() {
   // Location Post Type
   register_post_type('location', array(
-    'supports'      =>  array('title', 'editor', 'excerpt'),
-    'rewrite'       =>  array('slug' => 'locations'),
-    'has_archive'   =>  true,
-    'public'        =>  true,
-    'show_in_rest'  =>  true,
-    'labels'        =>  array(
+    'capability_type' =>  'location',
+    'map_meta_cap'    =>  true, 
+    'supports'        =>  array('title', 'editor', 'excerpt'),
+    'rewrite'         =>  array('slug' => 'locations'),
+    'has_archive'     =>  true,
+    'public'          =>  true,
+    'show_in_rest'    =>  true,
+    'labels'          =>  array(
       'name'            =>  'Locations',
       'add_new_item'    =>  'Add New Location',
       'edit_item'       =>  'Edit Location',
@@ -21,12 +23,14 @@ function winery_post_types() {
   
   // Event Post Type
   register_post_type('event', array(
-    'supports'      =>  array('title', 'editor', 'excerpt'),
-    'rewrite'       =>  array('slug' => 'events'),
-    'has_archive'   =>  true,
-    'public'        =>  true,
-    'show_in_rest'  =>  true,
-    'labels'        =>  array(
+    'capability_type' =>  'event',
+    'map_meta_cap'    =>  true, 
+    'supports'        =>  array('title', 'editor', 'excerpt'),
+    'rewrite'         =>  array('slug' => 'events'),
+    'has_archive'     =>  true,
+    'public'          =>  true,
+    'show_in_rest'    =>  true,
+    'labels'          =>  array(
       'name'            =>  'Events',
       'add_new_item'    =>  'Add New Event',
       'edit_item'       =>  'Edit Event',
@@ -39,13 +43,15 @@ function winery_post_types() {
 
   // Wine Post Type
   register_post_type('wine', array(
-    'supports'      =>  array('title', 'editor', 'thumbnail'),
-    'taxonomies'    => array('post_tag'),
-    'rewrite'       =>  array('slug' => 'wines'),
-    'has_archive'   =>  true,
-    'public'        =>  true,
-    'show_in_rest'  =>  true,
-    'labels'        =>  array(
+    'capability_type' =>  'wine',
+    'map_meta_cap'    =>  true, 
+    'supports'        =>  array('title', 'editor', 'thumbnail'),
+    'taxonomies'      =>  array('post_tag'),
+    'rewrite'         =>  array('slug' => 'wines'),
+    'has_archive'     =>  true,
+    'public'          =>  true,
+    'show_in_rest'    =>  true,
+    'labels'          =>  array(
       'name'            =>  'Wines',
       'add_new_item'    =>  'Add New Wine',
       'edit_item'       =>  'Edit Wine',
@@ -58,10 +64,12 @@ function winery_post_types() {
 
   // Staff Post Type
   register_post_type('staff', array(
-    'supports'      =>  array('title', 'editor', 'thumbnail'),
-    'public'        =>  true,
-    'show_in_rest'  =>  true,
-    'labels'        =>  array(
+    'capability_type' =>  'staff',
+    'map_meta_cap'    =>  true, 
+    'supports'        =>  array('title', 'editor', 'thumbnail'),
+    'public'          =>  true,
+    'show_in_rest'    =>  true,
+    'labels'          =>  array(
       'name'            =>  'Staff',
       'add_new_item'    =>  'Add New Staff',
       'edit_item'       =>  'Edit Staff',
