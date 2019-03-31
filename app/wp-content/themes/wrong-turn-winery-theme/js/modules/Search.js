@@ -1,3 +1,5 @@
+import makeRequest from './makeRequest';
+
 class Search {
   // 1. describe  and create/initiate our object
   constructor() {
@@ -30,11 +32,17 @@ class Search {
     });
 
     document.addEventListener('keydown', event => {
-      if(event.keyCode === 83 && !this.isOverlayOpen  && document.querySelector('input') !== document.activeElement) {
+      const inputs = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
+      let inputsHaveFocus = false;
+      inputs.forEach(input=> {
+        if (input === document.activeElement) {
+          inputsHaveFocus = true;
+        }
+      })
+      if(event.keyCode === 83 && !this.isOverlayOpen  && !inputsHaveFocus) {
         event.preventDefault();
         this.openOverlay();
         event.stopPropagation();
-        
       }
 
       if(event.keyCode === 27 && this.isOverlayOpen) {
@@ -77,44 +85,12 @@ class Search {
   }
 
   getResults() {
-    const makeRequest = (url, method) => {
-      // Create the XHR request
-      let request = new XMLHttpRequest();
-    
-      // Return it as a Promise
-      return new Promise((resolve, reject) => {
-        // Setup our listener to process completed requests
-        request.onreadystatechange = () => {
-    
-          // Only run if the request is complete
-          if (request.readyState !== 4) return;
-    
-          // Process the response
-          if (request.status >= 200 && request.status < 400) {
-            // If successful
-            resolve(JSON.parse(request.response));
-          } else {
-            // If failed
-            reject({
-              status: request.status,
-              statusText: request.statusText
-            });
-          }
-    
-        }
-    
-        // Setup our HTTP request
-        request.open(method || 'GET', url, true);
-    
-        // Send the request
-        request.send();
-    
-      });
-    };
-
-      
-    makeRequest(`${wineryData.root_url}/wp-json/winery/v1/search?term=${this.searchField.value}`)
-      .then(matches => {
+    makeRequest({
+      method: 'GET',
+      url: `${wineryData.root_url}/wp-json/winery/v1/search?term=${this.searchField.value}`
+    })
+      .then(data => {
+        let matches = JSON.parse(data);
         this.resultsDiv.innerHTML = `
           <div class="row">
             <div class="one-third">
