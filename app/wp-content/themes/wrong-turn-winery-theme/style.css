@@ -1084,6 +1084,10 @@ body.login {
 }
   } 
 
+.edit-note > i {
+  pointer-events: none;
+} 
+
 .edit-note:hover, .delete-note:hover {
   background-color: #DDD;
 } 
@@ -1092,12 +1096,20 @@ body.login {
   color: red;
 } 
 
+.delete-note > i {
+  pointer-events: none;
+} 
+
 .update-note {
   visibility: hidden;
 } 
 
 .update-note--visible {
   visibility: visible;
+} 
+
+.update-note--visible > i {
+  pointer-events: none;
 } 
 
 .note-title-field {
