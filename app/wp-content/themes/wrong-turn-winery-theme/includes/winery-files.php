@@ -8,7 +8,8 @@ function winery_files() {
   // TODO: revert microtime() back to version '1.0' before this goes live
   wp_enqueue_style('winery_main_styles', get_stylesheet_uri(), NULL, microtime());
   wp_localize_script('main-winery-js', 'wineryData', array(
-   'root_url' => get_site_url()
+   'root_url' => get_site_url(),
+   'nonce'    => wp_create_nonce('wp_rest')
   ));
 }
 
