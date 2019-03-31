@@ -79,6 +79,23 @@ function winery_post_types() {
     ),
     'menu_icon' => 'dashicons-businessman'
   ));
+
+  // Note Post Type
+  register_post_type('note', array(
+    'supports'        =>  array('title', 'editor', 'author'),
+    'public'          =>  false,
+    'show_ui'         =>  true,
+    'show_in_rest'    =>  true,
+    'labels'          =>  array(
+      'name'            =>  'Notes',
+      'add_new_item'    =>  'Add New Note',
+      'edit_item'       =>  'Edit Note',
+      'all_items'       =>  'All Notes',
+      'view_item'       =>  'View Note',
+      'singular_name'   =>  'Note'
+    ),
+    'menu_icon' => 'dashicons-welcome-write-blog'
+  ));
 }
 
 add_action('init', 'winery_post_types');
