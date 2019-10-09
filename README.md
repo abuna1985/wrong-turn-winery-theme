@@ -68,5 +68,5 @@ This project is licensed under GPLv2 or later - see the [license link](http://ww
 
 ## Acknowledgments
 
-* [LearnWebCode](https://github.com/LearnWebCode) [Vagrant-LAMP dev environment](https://github.com/LearnWebCode/vagrant-lamp)
+* [LearnWebCode](https://github.com/LearnWebCode) - [Vagrant-LAMP dev environment](https://github.com/LearnWebCode/vagrant-lamp)
 
