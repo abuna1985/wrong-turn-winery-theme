@@ -4,6 +4,9 @@
 
 A theme that features a fully functional site for a fictional winery. I took a simple bootstrap theme and dynamically added custom posts (Wines, Events, Locations, Staff, Notes). I also built a filtered live search function utilizing the WP REST API and ES6 Object Orriented JavaScript.
 
+## Demo
+
+You can find a demo of Wrong Turn Winery [here](https://adama.sgedu.site)
 
 ## Prerequisites
 
