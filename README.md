@@ -6,7 +6,7 @@ A theme that features a fully functional site for a fictional winery. I took a s
 
 ## Demo
 
-You can find a demo of Wrong Turn Winery [here](https://adama.sgedu.site)
+You can find a demo of Wrong Turn Winery at [www.wrongturnwinery.com](https://www.wrongturnwinery.com)
 
 ## Prerequisites
 
